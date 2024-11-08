@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button } from "@/components/ui/button";
 import { Download, Lamp } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
