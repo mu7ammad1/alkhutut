@@ -1,101 +1,157 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Download, InfoIcon } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+  const Colors = [
+    `ffc8dd`,
+    `ffafcc`,
+    `d5bdaf`,
+    `c6ac8f`,
+    `ccd5ae`,
+    `d4a373`,
+    `ff99c8`,
+    `fcf6bd`,
+    `d0f4de`,
+    `a9def9`,
+    `e4c1f9`,
+    `70d6ff`,
+    `ff70a6`,
+    `ff9770`,
+    `ffd670`,
+    `e9ff70`,
+    `84dcc6`,
+    `a5ffd6`,
+    `ffa69e`,
+    `ff686b`,
+    `ee6055`,
+    `60d394`,
+    `aaf683`,
+    `ffd97d`,
+    `ff9b85`,
+    `c3cfa0`,
+    `fedb72`,
+    `da9461`,
+    `a873e8`,
+    `5d7bd5`,
+    `56d1dc`,
+    `5eaff2`,
+    `f877b1`,
+    `ffe45e`,
+    `f0a963`,
+    `dd7f5a`,
+    `95d387`,
+    `caffbf`,
+    `ffba66`,
+    `90cf8e`,
+    `89d2a3`,
+  ]
+
+
+  const Card = (
+    <div
+      className={`w-full relative flex flex-col gap-5 bg-primary-foreground border-none rounded-xl p-7 text-right text-nowrap`}
+    >
+      <Link
+        href={`/18541354`}
+        className={`absolute top-0 bottom-0 left-0 right-0 w-full h-full rounded-3xl -z-0`}
+      ></Link>
+      <Link href={`/18541354`} className={`text-7xl py-4 w-full z-0`}>
+        أبجد هوز حطي
+      </Link>
+      <Separator className={`bg-secondary-foreground/20 z-0`} />
+      <div className={`flex justify-between items-center z-0`}>
+        <div className={`flex gap-2`}>
+          <Dialog>
+            <DialogTrigger className="bg-secondary rounded-full p-2.5">
+              <InfoIcon size={20} />
+            </DialogTrigger>
+            <DialogContent className="border-none">
+              <DialogHeader>
+                <DialogTitle>Iam Saudi Bold</DialogTitle>
+                <DialogDescription>
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers. This
+                  action cannot be undone. This will permanently delete your
+                  account and remove your data from our servers. This action
+                  cannot be undone. This will permanently delete your account
+                  and remove your data from our servers. This action cannot be
+                  undone. This will permanently delete your account and remove
+                  your data from our servers. This action cannot be undone. This
+                  will permanently delete your account and remove your data from
+                  our servers. This action cannot be undone. This will
+                  permanently delete your account and remove your data from our
+                  servers. This action cannot be undone. This will permanently
+                  delete your account and remove your data from our servers.
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers. This
+                  action cannot be undone. This will permanently delete your
+                  account and remove your data from our servers. This action
+                  cannot be undone. This will permanently delete your account
+                  and remove your data from our servers. This action cannot be
+                  undone. This will permanently delete your account and remove
+                  your data from our servers. This action cannot be undone. This
+                  will permanently delete your account and remove your data from
+                  our servers. This action cannot be undone. This will
+                  permanently delete your account and remove your data from our
+                  servers. This action cannot be undone. This will permanently
+                  delete your account and remove your data from our servers.
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers. This
+                  action cannot be undone. This will permanently delete your
+                  account and remove your data from our servers. This action
+                  cannot be undone. This will permanently delete your account
+                  and remove your data from our servers. This action cannot be
+                  undone. This will permanently delete your account and remove
+                  your data from our servers. This action cannot be undone. This
+                  will permanently delete your account and remove your data from
+                  our servers. This action cannot be undone. This will
+                  permanently delete your account and remove your data from our
+                  servers. This action cannot be undone. This will permanently
+                  delete your account and remove your data from our servers.
+                  This action cannot be undone. This will permanently delete
+                  your account and remove your data from our servers.
+                </DialogDescription>
+              </DialogHeader>
+            </DialogContent>
+          </Dialog>
+
+          <Button
+            variant={"secondary"}
+            size={"default"}
+            className="rounded-2xl"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Download /> <span className="max-sm:hidden">Download</span>
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <span className="text-base">Iam Saudi Bold</span>
+      </div>
     </div>
+  );
+  return (
+    <main className={`flex flex-col gap-3`}>
+      <div className={`w-full h-28`}></div>
+      {Card}
+      {Card}
+      {Card}
+      {Card}
+      {Card}
+      {Card}
+      {Card}
+      {Card}
+      {Card}
+      {Card}
+      {Card}
+    </main>
   );
 }
