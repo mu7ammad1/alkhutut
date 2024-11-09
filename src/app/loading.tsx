@@ -1,5 +1,7 @@
+import { Loader } from "lucide-react";
+
 export default function Loading() {
   return (
-    <div>The React Framework for the Web</div>
+    <div className="w-full h-screen flex justify-center items-center"><Loader size={32} className="animate-spin"/></div>
   )
 }

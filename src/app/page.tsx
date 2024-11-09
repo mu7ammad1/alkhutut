@@ -1,19 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Button } from "@/components/ui/button";
-import { Download, InfoIcon } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import Link from "next/link";
+import { sql } from "@vercel/postgres";
+import PetsWithPagination from "./note/useVisit";
 
-export default function Home() {
-
+export default async function Home() {
   const Colors = [
     `ffc8dd`,
     `ffafcc`,
@@ -56,103 +45,17 @@ export default function Home() {
     `ffba66`,
     `90cf8e`,
     `89d2a3`,
-  ]
+  ];
 
+  // استعلام لجلب جميع الحيوانات الأليفة من الجدول
+  const { rows } = await sql`
+ SELECT * FROM Pets
+`;
 
-  const Card = (
-    <div
-      className={`w-full relative flex flex-col gap-5 bg-primary-foreground border-none rounded-xl p-7 text-right text-nowrap`}
-    >
-      <Link
-        href={`/18541354`}
-        className={`absolute top-0 bottom-0 left-0 right-0 w-full h-full rounded-3xl -z-0`}
-      ></Link>
-      <Link href={`/18541354`} className={`text-7xl py-4 w-full z-0`}>
-        أبجد هوز حطي
-      </Link>
-      <Separator className={`bg-secondary-foreground/20 z-0`} />
-      <div className={`flex justify-between items-center z-0`}>
-        <div className={`flex gap-2`}>
-          <Dialog>
-            <DialogTrigger className="bg-secondary rounded-full p-2.5">
-              <InfoIcon size={20} />
-            </DialogTrigger>
-            <DialogContent className="border-none">
-              <DialogHeader>
-                <DialogTitle>Iam Saudi Bold</DialogTitle>
-                <DialogDescription>
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers. This
-                  action cannot be undone. This will permanently delete your
-                  account and remove your data from our servers. This action
-                  cannot be undone. This will permanently delete your account
-                  and remove your data from our servers. This action cannot be
-                  undone. This will permanently delete your account and remove
-                  your data from our servers. This action cannot be undone. This
-                  will permanently delete your account and remove your data from
-                  our servers. This action cannot be undone. This will
-                  permanently delete your account and remove your data from our
-                  servers. This action cannot be undone. This will permanently
-                  delete your account and remove your data from our servers.
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers. This
-                  action cannot be undone. This will permanently delete your
-                  account and remove your data from our servers. This action
-                  cannot be undone. This will permanently delete your account
-                  and remove your data from our servers. This action cannot be
-                  undone. This will permanently delete your account and remove
-                  your data from our servers. This action cannot be undone. This
-                  will permanently delete your account and remove your data from
-                  our servers. This action cannot be undone. This will
-                  permanently delete your account and remove your data from our
-                  servers. This action cannot be undone. This will permanently
-                  delete your account and remove your data from our servers.
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers. This
-                  action cannot be undone. This will permanently delete your
-                  account and remove your data from our servers. This action
-                  cannot be undone. This will permanently delete your account
-                  and remove your data from our servers. This action cannot be
-                  undone. This will permanently delete your account and remove
-                  your data from our servers. This action cannot be undone. This
-                  will permanently delete your account and remove your data from
-                  our servers. This action cannot be undone. This will
-                  permanently delete your account and remove your data from our
-                  servers. This action cannot be undone. This will permanently
-                  delete your account and remove your data from our servers.
-                  This action cannot be undone. This will permanently delete
-                  your account and remove your data from our servers.
-                </DialogDescription>
-              </DialogHeader>
-            </DialogContent>
-          </Dialog>
-
-          <Button
-            variant={"secondary"}
-            size={"default"}
-            className="rounded-2xl"
-          >
-            <Download /> <span className="max-sm:hidden">Download</span>
-          </Button>
-        </div>
-        <span className="text-base">Iam Saudi Bold</span>
-      </div>
-    </div>
-  );
   return (
     <main className={`flex flex-col gap-3`}>
       <div className={`w-full h-28`}></div>
-      {Card}
-      {Card}
-      {Card}
-      {Card}
-      {Card}
-      {Card}
-      {Card}
-      {Card}
-      {Card}
-      {Card}
-      {Card}
+      <PetsWithPagination rows={rows} />
     </main>
   );
 }
